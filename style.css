@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-image: url("Mountain.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-top: 10em;
+  background-color: transparent;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 0.7em 2em;
+  margin-right: 10px;
+  margin-bottom: 10em;
+}
+
+.button {
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 0.5em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+}
+.details {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* margin-bottom: 20px; */
+}
