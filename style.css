@@ -7,11 +7,9 @@ body {
 }
 
 .container {
-  width: 500px;
-  height: 500px;
   border: 1px solid black;
   border-radius: 8px;
-  margin-top: 10em;
+  margin-top: 48px;
   background-color: transparent;
 }
 
@@ -25,7 +23,6 @@ body {
   border-radius: 8px;
   padding: 0.7em 2em;
   margin-right: 10px;
-  margin-bottom: 10em;
 }
 
 .button {
@@ -36,8 +33,23 @@ body {
   cursor: pointer;
 }
 .details {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* margin-bottom: 20px; */
+  padding: 24px;
+}
+
+.temp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.temp-container > h3,
+.temp-container > p {
+  margin: 0;
+  margin: 5px;
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
 }
