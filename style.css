@@ -25,6 +25,13 @@ body {
   margin-right: 10px;
 }
 
+.unit-btn {
+  background: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .button {
   border-radius: 8px;
   border: 1px solid black;

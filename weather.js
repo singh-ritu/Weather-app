@@ -8,7 +8,7 @@ if ("geolocation" in navigator) {
     getWeather(apiString);
   });
 }
-
+let temp_f = "";
 async function getWeather(str = "") {
   const country = document.getElementsByClassName("input")[0].value;
   const response = await fetch(
@@ -17,6 +17,7 @@ async function getWeather(str = "") {
     }&aqi=no`
   );
   const data = await response.json();
+  temp_f = data.current.temp_f;
 
   const temperature = document.querySelector("#temperature");
   temperature.innerText = data.current.temp_c;
@@ -52,4 +53,9 @@ async function getWeather(str = "") {
   }
 
   console.log(country, data);
+}
+
+function changeUnit() {
+  const temperature = document.querySelector("#temperature");
+  temperature.innerText = temp_f;
 }
