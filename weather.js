@@ -1,9 +1,20 @@
 // http://api.weatherapi.com/v1/current.json?key=3bd2bd0b2f68434a8ed82333232809&q=London&aqi=no
 
-async function getWeather() {
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position);
+    const apiString =
+      position.coords.latitude + "," + position.coords.longitude;
+    getWeather(apiString);
+  });
+}
+
+async function getWeather(str = "") {
   const country = document.getElementsByClassName("input")[0].value;
   const response = await fetch(
-    ` http://api.weatherapi.com/v1/current.json?key=3bd2bd0b2f68434a8ed82333232809&q=${country}&aqi=no`
+    ` http://api.weatherapi.com/v1/current.json?key=3bd2bd0b2f68434a8ed82333232809&q=${
+      str ? str : country
+    }&aqi=no`
   );
   const data = await response.json();
 
