@@ -19,5 +19,26 @@ async function getWeather() {
   const name = document.querySelector("#name");
   name.innerText = data.location.name;
 
+  if (!document.querySelector("#weather-img")) {
+    const weatherStatusImg = document.createElement("img");
+    const weatherStatus = document.createElement("h3");
+
+    weatherStatus.id = "weather-status";
+    weatherStatusImg.id = "weather-img";
+
+    weatherStatusImg.src = data.current.condition.icon;
+    weatherStatus.innerText = data.current.condition.text;
+
+    const tempContainer = document.querySelector(".temp-container");
+
+    tempContainer.append(weatherStatusImg, weatherStatus);
+  } else {
+    const weatherStatusImg = document.querySelector("#weather-img");
+    const weatherStatus = document.querySelector("#weather-status");
+
+    weatherStatusImg.src = data.current.condition.icon;
+    weatherStatus.innerText = data.current.condition.text;
+  }
+
   console.log(country, data);
 }
